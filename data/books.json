@@ -1,58 +1,118 @@
 [
-    {
-        "title": "book1",
-        "file_name": "book1.png",
-        "name": "林語堂作品精選3︰生活的藝術",
-        "author": "林語堂",
-        "width": "100%"
-    },
-    {
-        "title": "book1",
-        "file_name": "book2.png",
-        "name": "自由︰在歷史盡頭長大成人",
-        "author": "蕾雅·烏琵",
-        "width": "100%"
-    },
-    {
-        "title": "book1",
-        "file_name": "book3.png",
-        "name": "媽媽的每一天",
-        "author": "蕾雅·烏琵",
-        "width": "100%"
-    },
-    {
-        "title": "book1",
-        "file_name": "book4.png",
-        "name": "少年遇見薩提爾︰李崇建",
-        "author": "李崇建、甘耀明",
-        "width": "100%"
-    },
-    {
-        "title": "book1",
-        "file_name": "book5.png",
-        "name": "日日好日子︰日本風土紀事",
-        "author": "曾鈐龍",
-        "width": "100%"
-    },
-    {
-        "title": "book1",
-        "file_name": "book6.png",
-        "name": "你的親密關係模式﹐藏著你",
-        "author": "曾少芬",
-        "width": "100%"
-    },
-    {
-        "title": "book1",
-        "file_name": "book7.png",
-        "name": "神奇柑仔店16︰忍者薑片",
-        "author": "廣嶋玲子",
-        "width": "100%"
-    },
-    {
-        "title": "book1",
-        "file_name": "book8.png",
-        "name": "內在黑洞︰薩提爾帶你走過",
-        "author": "李崇義",
-        "width": "93%"
-    }
+    [
+        {
+            "title": "book1",
+            "file_name": "1.jpg",
+            "name": "思辨，從問對問題開始",
+            "author": "尼爾．布朗",
+            "width": "100%"
+        },
+        {
+            "title": "book2",
+            "file_name": "2.jpg",
+            "name": "可不可以不要努力",
+            "author": "河浣 ",
+            "width": "100%"
+        },
+        {
+            "title": "book3",
+            "file_name": "3.png",
+            "name": "生活的藝術",
+            "author": "林語堂",
+            "width": "100%"
+        },
+        {
+            "title": "book4",
+            "file_name": "4.png",
+            "name": "想太多也沒關係",
+            "author": "克莉司德‧布提可南",
+            "width": "100%"
+        },
+        {
+            "title": "book5",
+            "file_name": "5.png",
+            "name": "日日好日子",
+            "author": "曾鈐龍",
+            "width": "100%"
+        },
+        {
+            "title": "book6",
+            "file_name": "6.png",
+            "name": "你的親密關係模式",
+            "author": "曾少芬",
+            "width": "100%"
+        },
+        {
+            "title": "book7",
+            "file_name": "8.png",
+            "name": "逆思維",
+            "author": "亞當．格蘭特",
+            "width": "100%"
+        },
+        {
+            "title": "book8",
+            "file_name": "7.png",
+            "name": "你可能學錯了",
+            "author": "丹尼爾．威靈漢",
+            "width": "100%"
+        }
+    ],
+    [
+        {
+            "title": "book9",
+            "file_name": "9.png",
+            "name": "我可能錯了",
+            "author": "郭騰堅",
+            "width": "100%"
+        },
+        {
+            "title": "book10",
+            "file_name": "10.png",
+            "name": "在歷史盡頭長大成人",
+            "author": "蕾雅·烏琵",
+            "width": "100%"
+        },
+        {
+            "title": "book3",
+            "file_name": "3.png",
+            "name": "生活的藝術",
+            "author": "林語堂",
+            "width": "100%"
+        },
+        {
+            "title": "book11",
+            "file_name": "11.png",
+            "name": "少年遇見薩提爾",
+            "author": "李崇建、甘耀明",
+            "width": "100%"
+        },
+        {
+            "title": "book12",
+            "file_name": "12.png",
+            "name": "大人學破局思考",
+            "author": " 姚詩豪, 張國洋",
+            "width": "100%"
+        },
+        {
+            "title": "book5",
+            "file_name": "5.png",
+            "name": "日日好日子",
+            "author": "曾鈐龍",
+            "width": "100%"
+        },
+        {
+            "title": "book13",
+            "file_name": "13.png",
+            "name": "全知讀者視角09",
+            "author": " sing N song",
+            "width": "100%"
+        },
+        {
+            "title": "book4",
+            "file_name": "4.png",
+            "name": "想太多也沒關係",
+            "author": "克莉司德‧布提可南",
+            "width": "100%"
+        }
+    ]
 ]
