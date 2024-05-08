@@ -1,50 +1,58 @@
 [
     {
+        "title": "book1",
         "file_name": "book1.png",
         "name": "林語堂作品精選3︰生活的藝術",
         "author": "林語堂",
-        "width": 100
+        "width": "100%"
     },
     {
+        "title": "book1",
         "file_name": "book2.png",
         "name": "自由︰在歷史盡頭長大成人",
         "author": "蕾雅·烏琵",
-        "width": 100
+        "width": "100%"
     },
     {
+        "title": "book1",
         "file_name": "book3.png",
         "name": "媽媽的每一天",
         "author": "蕾雅·烏琵",
-        "width": 100
+        "width": "100%"
     },
     {
+        "title": "book1",
         "file_name": "book4.png",
         "name": "少年遇見薩提爾︰李崇建",
         "author": "李崇建、甘耀明",
-        "width": 100
+        "width": "100%"
     },
     {
+        "title": "book1",
         "file_name": "book5.png",
         "name": "日日好日子︰日本風土紀事",
         "author": "曾鈐龍",
-        "width": 100
+        "width": "100%"
     },
     {
+        "title": "book1",
         "file_name": "book6.png",
         "name": "你的親密關係模式﹐藏著你",
         "author": "曾少芬",
-        "width": 100
+        "width": "100%"
     },
     {
+        "title": "book1",
         "file_name": "book7.png",
         "name": "神奇柑仔店16︰忍者薑片",
         "author": "廣嶋玲子",
-        "width": 100
+        "width": "100%"
     },
     {
+        "title": "book1",
         "file_name": "book8.png",
         "name": "內在黑洞︰薩提爾帶你走過",
         "author": "李崇義",
-        "width": 93
+        "width": "93%"
     }
 ]
