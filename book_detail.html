@@ -535,8 +535,8 @@
             $.each(data['new_book_recommended'], function(index, book){
                 var item = '<div class="item text-center">';
                 item += '<img src="./assets/images/books/' + book.file_name + '" class="d-block mx-auto" style="width: ' + book.width + ';" alt="' + book.title + '">';
-                item += '<p class="mb-0 owl-item-title"><a href="/book_detail.html?' + book.title + '">' + book.name + '</a></p>';
-                item += '<p class="mb-0 owl-item-author"><a href="/book_detail.html?' + book.title + '">' + book.author + '</a></p>';
+                item += '<p class="mb-0 owl-item-title"><a href="./book_detail.html?book_title=' + book.title + '">' + book.name + '</a></p>';
+                item += '<p class="mb-0 owl-item-author"><a href="./book_detail.html?book_title=' + book.title + '">' + book.author + '</a></p>';
                 item += '</div>';
 
                 $("#pills-new-book-recommended-carousel").append(item);
