@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="utf-8">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>如果書店</title>
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous">
+
+    <!-- owl.carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></link>
+
+
+    <style>
+        .carousel-inner img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            /* height: 265px; */
+            margin: auto;
+        }
+        .carousel-item {
+            height: 40rem;
+        }
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-content a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #479794;
+            font-weight: bolder;
+            font-size: 25px;
+        }
+        .d-md-flex {
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .position-absolute {
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .topic-block {
+            /* margin-top: 10rem; */
+            margin-bottom: 1rem;
+        }
+        .topic-title {
+            color: #305352;
+            font-weight: bolder;
+            text-align: left;
+        }
+        .owl-item-title {
+            color: #305352;
+            font-size: larger;
+            font-weight: bold;
+            text-align: left;
+        }
+        .owl-item-author {
+            text-align: left;
+        }
+        .sidebar_item {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 90px;
+        }
+        .sidebar_item_block {
+            display: flex;
+            align-items: center;
+        }
+        .sidebar_item_icon {
+            font-size: 2rem;
+            line-height: 1.5;
+            margin-right: 5px;
+        }
+        .sidebar_item_text {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        .discount-price-border {
+            border: 2px solid #5b9e9a94; /* 自定义边框颜色和宽度 */
+            border-radius: 15px; /* 设置圆角半径 */
+            padding: 10px; /* 内边距 */
+        }
+        .footer-hr {
+            border-top: 5px solid #2c4947;
+            margin: 20px 0;
+        }
+        @media (max-width: 576px) {
+            .carousel-inner img {
+                height: 265px;
+            }
+            .carousel-item {
+                height: auto;
+            }
+            .main-content a {
+                margin-right: 20px;
+                font-size: 10px;
+            }
+            .topic-block {
+                /* margin-top: 10rem; */
+                margin-bottom: 1.5rem;
+            }
+            .topic-title {
+                font-size: 1.2rem;
+            }
+            .owl-item-title {
+                font-size: 10px;
+                font-weight: bold;
+                text-align: left;
+            }
+            .owl-item-author {
+                font-size: 11px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom">
+        <div class="container-fluid ms-3 me-3">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./assets/images/nav_logo.svg" alt="nav_logo" width="150rem" height="60rem" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <div class="navbar-nav me-auto mb-2 mb-lg-0"></div>
+                <div class="navbar-text">
+                    <ul class="navbar-nav d-flex align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa-solid fa-magnifying-glass" style="font-size: 1.5rem; line-height: 1.5;"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa-solid fa-cart-shopping" style="font-size: 1.5rem; line-height: 1.5;"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa-regular fa-bell" style="font-size: 1.5rem; line-height: 1.5;"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" aria-expanded="false">
+                                <img src="./assets/images/user_photo.png" alt="" width="30" height="30" class="rounded-circle" style="border: 1px solid black;">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./login.html">登入</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">註冊</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="row d-flex align-items-center justify-content-center mb-3">
+                <div class="col-4 d-flex align-items-center justify-content-center">
+                    <img src="./assets/images/user_photo.png" alt="" width="75" height="75" class="rounded-circle">
+                </div>
+                <div class="col d-flex align-items-center justify-content-center">
+                    <p><span style="font-weight: bolder;">終於脫離期末地域</span><br />ID : 2589647</p>
+                </div>
+            </div>
+            <div class="sidebar_item">
+                <div class="sidebar_item_block">
+                    <i class="fa-regular fa-circle-user sidebar_item_icon"></i>
+                    <p class="sidebar_item_text">個人設定</p>
+                </div>
+            </div>
+            <div class="sidebar_item">
+                <div class="sidebar_item_block">
+                    <i class="fa-solid fa-sack-dollar sidebar_item_icon"></i>
+                    <!-- <i class="fa-solid fa-dollar-sign sidebar_item_icon"></i> -->
+                    <p class="sidebar_item_text">帳務中心</p>
+                </div>
+            </div>
+            <div class="sidebar_item">
+                <div class="sidebar_item_block">
+                    <i class="fa-regular fa-bell sidebar_item_icon"></i>
+                    <p class="sidebar_item_text">活動/服務通知</p>
+                </div>
+            </div>
+            <div class="sidebar_item">
+                <div class="sidebar_item_block">
+                    <i class="fa-regular fa-pen-to-square sidebar_item_icon"></i>
+                    <p class="sidebar_item_text">創作中心</p>
+                </div>
+            </div>
+            <div class="sidebar_item">
+                <div class="sidebar_item_block">
+                    <i class="fa-regular fa-bookmark sidebar_item_icon"></i>
+                    <p class="sidebar_item_text">我的收藏</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <img src="./assets/images/books/${book.file_name}" alt="${book.name}" style="max-width: 100%; height: auto;">
+                </div>
+                <div class="col-8">
+                    <h2>${book.name}</h2>
+                    <p><strong>作者：</strong>${book.author}</p>
+                </div>
+            </div>
+        </div> -->
+        <div class="p-3 m-md-3">
+            <div id="bookDetail"></div>
+        </div>
+
+        <div class="p-3 m-md-3 text-center">
+            <div class="tab-content" id="pills-tabContent">
+                <div class="row align-items-center topic-block" id="pills-new-book-recommended">
+                    <div class="col">
+                        <h2 class="display-7 topic-title">新書強推</h2>
+                        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+                            <button class="pills-new-book-recommended-prev position-absolute start-0 translate-middle-y bg-transparent border-0" type="button">
+                                <i class="fa-solid fa-chevron-left" style="font-weight: bold;" aria-hidden="true"></i>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <div class="owl-carousel owl-theme"  id="pills-new-book-recommended-carousel"></div>
+                            <button class="pills-new-book-recommended-next position-absolute end-0 translate-middle-y bg-transparent border-0" type="button">
+                                <i class="fa-solid fa-chevron-right" style="font-weight: bold;" aria-hidden="true"></i>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- <footer class="container py-5">
+        <div class="text-center">
+            <small class="d-block mb-3 text-body-secondary">&copy; 2024 商設三乙 游千葇</small>
+        </div>
+    </footer> -->
+
+    <div style="background-color: #5E8F8C;">
+        <div class="container">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 border-top">
+                <div class="col mb-3">
+                    <!-- <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none"> -->
+                    <img src="./assets/images/nav_logo.svg" alt="nav_logo" width="150rem" height="60rem" />
+                    <!-- </a> -->
+                    <div class="mt-3">
+                    <p class="text-light">如果書店版權所有 Copyright&copy;2017 Bookrep All Rights Reserved.</p>
+                    <p class="text-light">客戶服務專線：(02) 2558-1417</p>
+                    <p class="text-light">發大財事業股份有限公司 | 統編: 7047667824</p>
+                    <p class="text-light"><i class="fa-brands fa-facebook fa-3x"></i>&emsp;<i class="fa-brands fa-instagram fa-3x"></i>&emsp;<i class="fa-brands fa-twitter fa-3x"></i></p>
+                    </div>
+                </div>
+    
+                <div class="col mb-3">
+    
+                </div>
+    
+                <div class="col mb-3">
+                    <h5 class="text-light" style="font-weight: bold;">關於我們</h5>
+                    <hr class="footer-hr">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">關於如果書店</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">人才招募</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">異業合作</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">廣告刊登</a></li>
+                    </ul>
+                </div>
+    
+                <div class="col mb-3">
+                    <h5 class="text-light" style="font-weight: bold;">會員服務</h5>
+                    <hr class="footer-hr">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">會員專區</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">加入會員</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">查詢帳號密碼</a></li>
+                    </ul>
+                </div>
+    
+                <div class="col mb-3">
+                    <h5 class="text-light" style="font-weight: bold;">客服中心</h5>
+                    <hr class="footer-hr">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">週一 ~ 五 8:00 -
+                                19:00</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">週六日、例假日 9:00 -
+                                18:00</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">客服專線 02-2558-1417</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">傳 真 02=27847008</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function(){
+        var url = location.href;
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        function getRandom(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function setRandomDate() {
+            var maxdaterandom = new Date().getTime();
+            var mindaterandom = new Date(1970, 0, 1, 8).getTime();
+            var randomdate = getRandom(mindaterandom, maxdaterandom);
+            var datestr = moment(randomdate).format('YYYY/MM/DD');
+            return datestr;
+        }
+
+        function setStarRating(rating) {
+            var starRating = '';
+
+            try {
+                if (rating > 6 || rating < 0) {
+                    throw "Rating must be between 0 and 5";
+                }
+                for (var i = 0; i < rating; i++) {
+                starRating += '<i class="fa-solid fa-star"></i>';
+                }
+                for (var i = 0; i < 6 - rating; i++) {
+                    starRating += '<i class="fa-regular fa-star"></i>';
+                }
+            return starRating;
+            } catch (error) {
+                console.error(error);
+            }
+            
+        }
+
+        //再來用去尋找網址列中是否有資料傳遞(QueryString)
+        if(url.indexOf('?')!=-1)
+        {
+            // var ary1 = url.split('?');
+            // var ary2 = ary1[1].split('=');
+            // var book_title = ary2[1];
+            var book_title = getParameterByName('book_title');
+            // console.log(book_title);
+
+            // $.getJSON("https://www.andylwj.com/train_bookStore/data/books.json", function(data){
+            //     var book = jsonData.children_book_selections.find(bk => bk.title === book_title);
+
+            //     console.log(book);
+
+            //     var targetElement = document.getElementById('target-id');
+            //     // 使用 innerHTML 直接插入 h1 标签及其内容
+            //     targetElement.innerHTML += '<h1>' + book_title + '</h1>';
+            // });
+            fetch('https://www.andylwj.com/train_bookStore/data/books.json')
+            .then(response => response.json())
+            .then(data => {
+                // var books_1 = data['new_book_recommended']
+                var book = null;
+                var categories = Object.keys(data);
+
+                var starRating = setStarRating(Math.floor(Math.random() * 6));
+                var publisher_list = ['奇幻基地', '知翎文化', '文字復興', '圓滑文創', '牛頓出版'];
+                var publisher = publisher_list[Math.floor(Math.random() * publisher_list.length)];
+                var publication_date = setRandomDate();
+                var language_list = ['繁體中文', '簡體中文', '英文'];
+                var language = language_list[Math.floor(Math.random() * language_list.length)];
+                var price = Math.floor(Math.random() * 851) + 150;
+                var discount_price = 0;
+
+                if (price > 200) {
+                    discount_price = Math.ceil(price * 0.95);
+
+                    book_price_html =  `<span class="text-decoration-line-through">${price}元</span>&nbsp;<span style="color: red;">${discount_price}元</span>`
+                } else {
+                    book_price_html = `${price}元`
+                }
+
+                categories.forEach(category => {
+                    var foundBook = data[category].find((book) => book.title === book_title);
+                    if (foundBook) {
+                        book = foundBook;
+                    }
+                });
+
+                if (book) {
+                    console.log(book);
+
+                    var bookDetailContainer = document.getElementById('bookDetail');
+
+                    var bookDiv = document.createElement('div');
+                    bookDiv.innerHTML = `
+                        <div>
+                            <div class="row">
+                                <div class="col-md-auto">
+                                    <img src="./assets/images/books/${book.file_name}" alt="${book.name}" style="max-width: 100%; height: auto;">
+                                </div>
+                                <div class="col">
+                                    <p>中文書>文學小說>恐怖
+                                    <h2>${book.name}</h2>
+                                    <p>${starRating} | <a href="#">我要評分</a></p>
+                                    <div class="px-4 mb-5">
+                                    <div class="row gx-5">
+                                    <div class="col">
+                                        <div class="discount-price-border">
+                                        <p>電子書</p>
+                                        <p>優惠價: <span style="color: red;">${Math.ceil(price * 0.8)}</span> 元</p>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="discount-price-border">
+                                        <p>平裝實體書</p>
+                                        <p>優惠價: <span style="color: red;">${(discount_price == 0) ? price : discount_price}</span> 元</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <p><strong>作者：</strong>${book.author}</p>
+                                    <p><strong>出版社：</strong>${publisher}</p>
+                                    <p><strong>出版日期：</strong>${publication_date}</p>
+                                    <p><strong>語言：</strong>${language}</p>
+                                    <p><strong>定價：</strong>` + book_price_html + `</p>
+                                </div>
+                                <div class="col col-lg-2">
+                                <p><i class="fa-solid fa-folder-plus"></i> 收藏</p>
+                                <button type="button" class="btn btn-primary">試閱</button>
+                                <br />
+                                <button type="button" class="btn btn-primary">分享</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    bookDetailContainer.appendChild(bookDiv);
+                }
+                    // var bookDetailContainer = document.getElementById('bookDetail');
+
+                // // 找到 title 为 "book22" 的书籍信息
+                // var book22 = books_1.children_book_selections.find((book) => {
+                //     console.log(book_title);
+                //     console.log(book.title);
+                //     console.log(book.title === book_title);
+                //     return book.title === book_title});
+                // console.log(book22);
+
+                // if (book22) {
+                //     // 创建 HTML 元素并插入到页面中
+                //     var bookInfoContainer = document.getElementById("bookInfo");
+
+                //     // 创建书籍信息的容器
+                //     var bookDiv = document.createElement("div");
+                //     bookDiv.classList.add("book");
+
+                //     // 添加书籍图片
+                //     var img = document.createElement("img");
+                //     img.src = "./assets/images/books/" + book22.file_name; // 图片路径
+                //     img.alt = book22.name; // 图片 alt 文本
+                //     bookDiv.appendChild(img);
+
+                //     // 添加书籍标题和作者
+                //     var title = document.createElement("h2");
+                //     title.textContent = book22.name;
+                //     bookDiv.appendChild(title);
+
+                //     var author = document.createElement("p");
+                //     author.textContent = "作者：" + book22.author;
+                //     bookDiv.appendChild(author);
+
+                //     // 将书籍信息容器添加到页面中
+                //     bookInfoContainer.appendChild(bookDiv);
+                // }
+            })
+            .catch(error => {
+                console.error('Error fetching JSON: ', error);
+            });
+
+            
+        }else{
+            window.location.href = "./index.html";
+        }
+
+        $.getJSON("https://www.andylwj.com/train_bookStore/data/books.json", function(data){
+            $.each(data['new_book_recommended'], function(index, book){
+                var item = '<div class="item text-center">';
+                item += '<img src="./assets/images/books/' + book.file_name + '" class="d-block mx-auto" style="width: ' + book.width + ';" alt="' + book.title + '">';
+                item += '<p class="mb-0 owl-item-title"><a href="/book_detail.html?' + book.title + '">' + book.name + '</a></p>';
+                item += '<p class="mb-0 owl-item-author"><a href="/book_detail.html?' + book.title + '">' + book.author + '</a></p>';
+                item += '</div>';
+
+                $("#pills-new-book-recommended-carousel").append(item);
+            });
+            $('#pills-new-book-recommended-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:false,
+                responsive:{
+                    0:{
+                        items:3
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:5
+                    }
+                }
+            });
+            $(`.pills-new-book-recommended-prev`).click(function(){
+                $('#pills-new-book-recommended-carousel').trigger('prev.owl.carousel');
+            });
+            $(`.pills-new-book-recommended-next`).click(function(){
+                $('#pills-new-book-recommended-carousel').trigger('next.owl.carousel');
+            });
+        });
+    });
+</script>

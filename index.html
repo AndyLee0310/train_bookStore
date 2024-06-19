@@ -128,7 +128,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom">
         <div class="container-fluid ms-3 me-3">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="./index.html">
                 <img src="./assets/images/nav_logo.svg" alt="nav_logo" width="150rem" height="60rem" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -411,8 +411,8 @@
             $.each(data['new_book_recommended'], function(index, book){
                 var item = '<div class="item text-center">';
                 item += '<img src="./assets/images/books/' + book.file_name + '" class="d-block mx-auto" style="width: ' + book.width + ';" alt="' + book.title + '">';
-                item += '<p class="mb-0 owl-item-title">' + book.name + '</p>';
-                item += '<p class="mb-0 owl-item-author">' + book.author + '</p>';
+                item += '<p class="mb-0 owl-item-title"><a href="./book_detail.html?book_title=' + book.title + '">' + book.name + '</a></p>';
+                item += '<p class="mb-0 owl-item-author"><a href="./book_detail.html?book_title=' + book.title + '">' + book.author + '</a></p>';
                 item += '</div>';
 
                 $("#pills-new-book-recommended-carousel").append(item);
