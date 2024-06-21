@@ -13,7 +13,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous">
 
-    <!-- owl.carousel -->
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"></link>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></link>
 
@@ -91,9 +91,13 @@
             margin: 0;
         }
         .discount-price-border {
-            border: 2px solid #5b9e9a94; /* 自定义边框颜色和宽度 */
-            border-radius: 15px; /* 设置圆角半径 */
-            padding: 10px; /* 内边距 */
+            border: 2px solid #5b9e9a94; 
+            border-radius: 15px; 
+            padding: 10px; 
+        }
+        .content-border{
+            border-right: 2px solid #5b9e9a94; 
+            padding: 10px; 
         }
         .footer-hr {
             border-top: 5px solid #2c4947;
@@ -186,7 +190,7 @@
                     <img src="./assets/images/user_photo.png" alt="" width="75" height="75" class="rounded-circle">
                 </div>
                 <div class="col d-flex align-items-center justify-content-center">
-                    <p><span style="font-weight: bolder;">終於脫離期末地域</span><br />ID : 2589647</p>
+                    <p><span style="font-weight: bolder;">終於脫離期末地獄</span><br />ID : 2589647</p>
                 </div>
             </div>
             <div class="sidebar_item">
@@ -237,13 +241,41 @@
         </div> -->
         <div class="p-3 m-md-3">
             <div id="bookDetail"></div>
+            <h2 class="display-7 topic-title">內容簡介</h2>
+            <div id="bookContent"></div>
+            <div class="mt-5 mb-5">
+                <div class="row">
+                    <div class="col col-lg-2">
+                        <div class="content-border">
+                            <h2 class="display-7 mb-5">目錄</h2>
+                            <p>契子</p>
+                            <p>第一章&nbsp;&nbsp;八尺大人</p>
+                            <p>第二章&nbsp;&nbsp;錯抓</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="content-border">
+                            <h2 class="display-7 mb-5">作者簡介</h2>
+                            <p>作者名</p>
+                            <p>多變的雙魚。</p>
+                            <p>書寫多變，繕寫靈異、驚悚、愛情、奇幻與勵志。</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h2 class="display-7 mb-5">詳細資料</h2>
+                        <p>ISBN: 9789869794497</p>
+                        <p>叢書系列: 境外之城</p>
+                        <p>規格: 瓶裝/272葉/21 x 14.8 x 1.4 cm/普通級/單色印刷</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="p-3 m-md-3 text-center">
             <div class="tab-content" id="pills-tabContent">
                 <div class="row align-items-center topic-block" id="pills-new-book-recommended">
                     <div class="col">
-                        <h2 class="display-7 topic-title">新書強推</h2>
+                        <h2 class="display-7 topic-title">推薦購買</h2>
                         <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
                             <button class="pills-new-book-recommended-prev position-absolute start-0 translate-middle-y bg-transparent border-0" type="button">
                                 <i class="fa-solid fa-chevron-left" style="font-weight: bold;" aria-hidden="true"></i>
@@ -317,7 +349,7 @@
                                 18:00</a></li>
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">客服專線 02-2558-1417</a>
                         </li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">傳 真 02=27847008</a>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">傳 真 02-27847008</a>
                         </li>
                     </ul>
                 </div>
@@ -352,20 +384,6 @@
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
 
-        function getRandom(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        function setRandomDate() {
-            var maxdaterandom = new Date().getTime();
-            var mindaterandom = new Date(1970, 0, 1, 8).getTime();
-            var randomdate = getRandom(mindaterandom, maxdaterandom);
-            var datestr = moment(randomdate).format('YYYY/MM/DD');
-            return datestr;
-        }
-
         function setStarRating(rating) {
             var starRating = '';
 
@@ -386,25 +404,26 @@
             
         }
 
-        //再來用去尋找網址列中是否有資料傳遞(QueryString)
+        function getRandom(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function setRandomDate() {
+            var maxdaterandom = new Date().getTime();
+            var mindaterandom = new Date(1970, 0, 1, 8).getTime();
+            var randomdate = getRandom(mindaterandom, maxdaterandom);
+            var datestr = moment(randomdate).format('YYYY/MM/DD');
+            return datestr;
+        }
+
+        
         if(url.indexOf('?')!=-1)
         {
-            // var ary1 = url.split('?');
-            // var ary2 = ary1[1].split('=');
-            // var book_title = ary2[1];
             var book_title = getParameterByName('book_title');
-            // console.log(book_title);
 
-            // $.getJSON("https://www.andylwj.com/train_bookStore/data/books.json", function(data){
-            //     var book = jsonData.children_book_selections.find(bk => bk.title === book_title);
-
-            //     console.log(book);
-
-            //     var targetElement = document.getElementById('target-id');
-            //     // 使用 innerHTML 直接插入 h1 标签及其内容
-            //     targetElement.innerHTML += '<h1>' + book_title + '</h1>';
-            // });
-            fetch('https://www.andylwj.com/train_bookStore/data/books.json')
+            fetch('https://jk901114.github.io/data/books.json')
             .then(response => response.json())
             .then(data => {
                 // var books_1 = data['new_book_recommended']
@@ -412,12 +431,14 @@
                 var categories = Object.keys(data);
 
                 var starRating = setStarRating(Math.floor(Math.random() * 6));
-                var publisher_list = ['奇幻基地', '知翎文化', '文字復興', '圓滑文創', '牛頓出版'];
+                var publisher_list = ['奇幻基地', '知翎文化', '文字復興', '圓滑文創', '牛頓出版', '晨星', '瑞昇', '野人', '小天下','新經典文化'];
                 var publisher = publisher_list[Math.floor(Math.random() * publisher_list.length)];
                 var publication_date = setRandomDate();
                 var language_list = ['繁體中文', '簡體中文', '英文'];
                 var language = language_list[Math.floor(Math.random() * language_list.length)];
-                var price = Math.floor(Math.random() * 851) + 150;
+                var min_price = 100;
+                var max_price = 400;
+                var price = Math.floor(Math.random() * (max_price - min_price + 1)) + min_price;
                 var discount_price = 0;
 
                 if (price > 200) {
@@ -436,10 +457,7 @@
                 });
 
                 if (book) {
-                    console.log(book);
-
                     var bookDetailContainer = document.getElementById('bookDetail');
-
                     var bookDiv = document.createElement('div');
                     bookDiv.innerHTML = `
                         <div>
@@ -448,24 +466,24 @@
                                     <img src="./assets/images/books/${book.file_name}" alt="${book.name}" style="max-width: 100%; height: auto;">
                                 </div>
                                 <div class="col">
-                                    <p>中文書>文學小說>恐怖
+                                    <p>中文書>文學小說>恐怖</p>
                                     <h2>${book.name}</h2>
                                     <p>${starRating} | <a href="#">我要評分</a></p>
                                     <div class="px-4 mb-5">
-                                    <div class="row gx-5">
-                                    <div class="col">
-                                        <div class="discount-price-border">
-                                        <p>電子書</p>
-                                        <p>優惠價: <span style="color: red;">${Math.ceil(price * 0.8)}</span> 元</p>
+                                        <div class="row gx-5">
+                                            <div class="col">
+                                                <div class="discount-price-border">
+                                                    <p>電子書</p>
+                                                    <p>優惠價: <span style="color: red;">${Math.ceil(price * 0.8)}</span> 元</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="discount-price-border">
+                                                    <p>平裝實體書</p>
+                                                    <p>優惠價: <span style="color: red;">${(discount_price == 0) ? price : discount_price}</span> 元</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="discount-price-border">
-                                        <p>平裝實體書</p>
-                                        <p>優惠價: <span style="color: red;">${(discount_price == 0) ? price : discount_price}</span> 元</p>
-                                        </div>
-                                    </div>
-                                    </div>
                                     </div>
                                     <p><strong>作者：</strong>${book.author}</p>
                                     <p><strong>出版社：</strong>${publisher}</p>
@@ -474,53 +492,36 @@
                                     <p><strong>定價：</strong>` + book_price_html + `</p>
                                 </div>
                                 <div class="col col-lg-2">
-                                <p><i class="fa-solid fa-folder-plus"></i> 收藏</p>
-                                <button type="button" class="btn btn-primary">試閱</button>
-                                <br />
-                                <button type="button" class="btn btn-primary">分享</button>
+                                    <p><i class="fa-solid fa-folder-plus"></i> 收藏</p>
+                                    <button type="button" class="btn btn-primary">試閱</button>
+                                    <br />
+                                    <button type="button" class="btn btn-primary">分享</button>
                                 </div>
                             </div>
                         </div>
                     `;
-
                     bookDetailContainer.appendChild(bookDiv);
+
+                    var _bookContent = book.content;
+                    var bookContentSplit = _bookContent.split('\n');
+                    var _bookContentText = '';
+
+                    for (var i = 0; i < bookContentSplit.length; i++) {
+                        _bookContentText += `<p>${bookContentSplit[i]}</p>`;
+                    }
+                    var bookContentContainer = document.getElementById('bookContent');
+                    var bookContentDiv = document.createElement('div');
+                    bookContentDiv.innerHTML = `
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                                    ${_bookContentText}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    bookContentContainer.appendChild(bookContentDiv);
                 }
-                    // var bookDetailContainer = document.getElementById('bookDetail');
-
-                // // 找到 title 为 "book22" 的书籍信息
-                // var book22 = books_1.children_book_selections.find((book) => {
-                //     console.log(book_title);
-                //     console.log(book.title);
-                //     console.log(book.title === book_title);
-                //     return book.title === book_title});
-                // console.log(book22);
-
-                // if (book22) {
-                //     // 创建 HTML 元素并插入到页面中
-                //     var bookInfoContainer = document.getElementById("bookInfo");
-
-                //     // 创建书籍信息的容器
-                //     var bookDiv = document.createElement("div");
-                //     bookDiv.classList.add("book");
-
-                //     // 添加书籍图片
-                //     var img = document.createElement("img");
-                //     img.src = "./assets/images/books/" + book22.file_name; // 图片路径
-                //     img.alt = book22.name; // 图片 alt 文本
-                //     bookDiv.appendChild(img);
-
-                //     // 添加书籍标题和作者
-                //     var title = document.createElement("h2");
-                //     title.textContent = book22.name;
-                //     bookDiv.appendChild(title);
-
-                //     var author = document.createElement("p");
-                //     author.textContent = "作者：" + book22.author;
-                //     bookDiv.appendChild(author);
-
-                //     // 将书籍信息容器添加到页面中
-                //     bookInfoContainer.appendChild(bookDiv);
-                // }
             })
             .catch(error => {
                 console.error('Error fetching JSON: ', error);
@@ -531,7 +532,7 @@
             window.location.href = "./index.html";
         }
 
-        $.getJSON("https://www.andylwj.com/train_bookStore/data/books.json", function(data){
+        $.getJSON("https://jk901114.github.io/data/books.json", function(data){
             $.each(data['new_book_recommended'], function(index, book){
                 var item = '<div class="item text-center">';
                 item += '<img src="./assets/images/books/' + book.file_name + '" class="d-block mx-auto" style="width: ' + book.width + ';" alt="' + book.title + '">';
